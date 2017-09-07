@@ -1,0 +1,15 @@
+<h1>
+  {{ title }}
+</h1>
+<p *ngFor = 'let x of videoList'>
+
+ <!--<a href='{{ x.slug }}'>{{ x.name }}</a>-->
+
+ <a href='{{ x.slug }}' *ngIf='x.slug == "Item-1"'>{{ x.name }}</a>
+  <a href='{{ x.slug }}' *ngIf='x.slug !== "Item-1"'>{{ x.name }}</a>
+
+</p>
+
+
+
+
