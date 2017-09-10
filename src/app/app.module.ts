@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 //third party imports
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { VideoListComponent } from './video-list/video-list.component';
@@ -12,6 +13,7 @@ import { VideoDetailsComponent } from './video-details/video-details.component';
 import { AppRoutingModule } from './app.routing';
 import { HomeComponent } from './home/home.component';
 import { SafePipe } from './utility/safe.pipe';
+import { SerarchComponent } from './serarch/serarch.component';
 
 
 @NgModule({
@@ -20,12 +22,14 @@ import { SafePipe } from './utility/safe.pipe';
     VideoListComponent,
     VideoDetailsComponent,
     SafePipe,
-    HomeComponent
+    HomeComponent,
+    SerarchComponent
   ],
   imports: [
     //ng bootstrap
     BsDropdownModule.forRoot(),
     CarouselModule.forRoot(),
+    FormsModule,
     HttpModule,
     BrowserModule,
     AppRoutingModule

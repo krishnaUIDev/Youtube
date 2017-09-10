@@ -1,0 +1,11 @@
+
+<form class="navbar-form navbar-left">
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Serch" name="searchQuery" [(ngModel)]='searchQuery'>
+  </div>
+  <button type="submit" class="btn btn-default">Submit {{ searchQuery }}
+    Search
+    <!--<span *ngIf="!searchQuery">Search</span>
+    <span *ngIf="seachQuery">Search for. .. {{ searchQuery }}</span>-->
+  </button>
+</form>
