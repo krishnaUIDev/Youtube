@@ -8,6 +8,7 @@ const appRoutes: Routes = [
   {
     path:"",
     component: VideoListComponent,
+
   },
   {
     path:"videos",
