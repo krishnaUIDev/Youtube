@@ -1,13 +1,14 @@
 import { NgModule }  from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { HomeComponent } from './home/home.component';
 import { VideoListComponent }  from './video-list/video-list.component';
 import { VideoDetailsComponent } from './video-details/video-details.component';
 
 const appRoutes: Routes = [
   {
     path:"",
-    component: VideoListComponent,
+    component: HomeComponent,
 
   },
   {
