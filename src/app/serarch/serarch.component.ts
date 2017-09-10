@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from "@angular/router";
 
 @Component({
@@ -7,18 +7,24 @@ import { Router } from "@angular/router";
   styleUrls: ['./serarch.component.css']
 })
 export class SerarchComponent implements OnInit {
-  searchLocation = "NewPort Beach"
-
+  searchLocation = "NewPort Beach";
+  searchQuery: string;
+ @Input()
+ passedQuery: string;
   constructor(private router:Router) { }
 
   ngOnInit() {
+   // console.log(this.passedQuery)
+    if(this.passedQuery){
+      this.searchQuery=this.passedQuery
+    }
   }
   submitSearch(event, formData){
     console.log(event)
     console.log(formData.value)
-    let query = formData.value['q']
-    if(query){
-      this.router.navigate(['/search', {q: query }])
+    let searchedQuery = formData.value['q']
+    if(searchedQuery){
+      this.router.navigate(['/search', {q: searchedQuery }])
     }
 
     //this.http.post(endpoint,{{}})
