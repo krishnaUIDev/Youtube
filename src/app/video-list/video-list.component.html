@@ -1,21 +1,18 @@
 <h1>
-  {{ title }}
+  {{ title }} {{ todayDate | date: "MM/dd/yy"}}  <!--used pipe-->
 </h1>
-<div *ngFor = 'let x of videoList'>
-
- <!--<a href='{{ x.slug }}'>{{ x.name }}</a>-->
-
- <a href='videos/{{ x.slug }}' >{{ x.name }}</a>
-
-  <div [innerHTML]='someItem'></div>
-
- <!-- <div><iframe width="560" height="315" [src]="getEmbedUrl(x)" frameborder="0" allowfullscreen></iframe></div>-->
-
-<div *ngIf="x.embed">
-  <iframe width="560" height="315" [src]="getEmbedUrl(x)" frameborder="0" allowfullscreen></iframe></div>
+  <div *ngFor = 'let x of videoList'>
+      <div [innerHTML]='someItem'></div>
+    <!--<div [innerHTML]='""|safe'></div>-->
 
 
-</div>
+
+      <a href='videos/{{ x.slug }}' >{{ x.name }}</a>
+      <!-- <div><iframe width="560" height="315" [src]="getEmbedUrl(x)" frameborder="0" allowfullscreen></iframe></div>-->
+      <div *ngIf="x.embed">
+        <iframe width="560" height="315" [src]="getEmbedUrl(x) | safe" frameborder="0" allowfullscreen ></iframe>
+      </div>
+  </div>
 
 
 

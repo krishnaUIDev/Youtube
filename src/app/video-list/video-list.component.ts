@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DomSanitizer} from "@angular/platform-browser"
+
 
 @Component({
   selector: 'video-list',
@@ -7,33 +7,38 @@ import { DomSanitizer} from "@angular/platform-browser"
   styleUrls: ['./video-list.component.css']
 })
 export class VideoListComponent implements OnInit {
-  title = "something";
-  someItem = "<h1>something</h1>";
+  title = "Video Songs";
+  someItem = "<h1>Song </h1>";
+  todayDate;
   //videoList = ["item1","item1","item1",]  JSON
   videoList = [
-    {name:"item1",
+    {name:"Hello Rammante",
      slug:"Item-1",
+      ID:"1",
       embed: `IwXzH693uUQ`,
     },
-    {name:"item2",
+    {name:"Nenu Nuvvantu",
       slug:"Item-2",
-      embed: `IwXzH693uUQ`,
+      ID:"2",
+      embed: `3oEgEnX5AE4`,
        },
     {name:"item3",
       slug:"Item-3",
+      ID:"3",
       embed: null,
         }
 
   ]
-  constructor(private sanitizer: DomSanitizer) { }
+  constructor() { }
 
   ngOnInit() {
+    this.todayDate = new Date()
   }
- /* getEmbedUrl(x){
+   /* getEmbedUrl(x){
     return this.sanitizer.bypassSecurityTrustResourceUrl('https://www/youtube.com/embed/' + x.embed)
   }*/
   getEmbedUrl(x){
-    return this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + x.embed)
+    return 'https://www.youtube.com/embed/' + x.embed
   }
 
 }
