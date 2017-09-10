@@ -1,17 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'video-list',
   templateUrl: './video-list.component.html',
   styleUrls: ['./video-list.component.css']
 })
-export class VideoListComponent implements OnInit {
+export class VideoListComponent implements OnInit, OnDestroy {
+  private req:any;
   title = "Orange Songs";
   someItem = "<h1>Song </h1>";
   todayDate;
   //videoList = ["item1","item1","item1",]  JSON
-  videoList = [
+  videoList :[any];
+  /*videoList = [
     {name:"Hello Rammante",
      slug:"Item-1",
       ID:"1",
@@ -38,11 +40,18 @@ export class VideoListComponent implements OnInit {
       embed: null,
         }
 
-  ]
-  constructor() { }
+  ]*/
+  constructor(private http:Http) { }
 
   ngOnInit() {
     this.todayDate = new Date()
+    this.req = this.http.get('assets/JSON/videos.json').subscribe(data =>{
+      console.log(data.json())
+      this.videoList = data.json() as [any];
+    })
+  }
+  ngOnDestroy(){
+    this.req.unsubscribe()
   }
    /* getEmbedUrl(x){
     return this.sanitizer.bypassSecurityTrustResourceUrl('https://www/youtube.com/embed/' + x.embed)

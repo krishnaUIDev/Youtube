@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpModule } from '@angular/http';
 
 //third party imports
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
@@ -26,7 +26,7 @@ import { SafePipe } from './utility/safe.pipe';
     //ng bootstrap
     BsDropdownModule.forRoot(),
     CarouselModule.forRoot(),
-
+    HttpModule,
     BrowserModule,
     AppRoutingModule
   ],
