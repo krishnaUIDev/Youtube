@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'serarch',
@@ -8,13 +9,17 @@ import { Component, OnInit } from '@angular/core';
 export class SerarchComponent implements OnInit {
   searchLocation = "NewPort Beach"
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
   }
   submitSearch(event, formData){
     console.log(event)
     console.log(formData.value)
+    let query = formData.value['q']
+    if(query){
+      this.router.navigate(['/search', {q: query }])
+    }
 
     //this.http.post(endpoint,{{}})
   }
