@@ -14,7 +14,7 @@ export class SerarchComponent implements OnInit {
   constructor(private router:Router) { }
 
   ngOnInit() {
-   // console.log(this.passedQuery)
+
     if(this.passedQuery){
       this.searchQuery=this.passedQuery
     }
@@ -27,7 +27,7 @@ export class SerarchComponent implements OnInit {
       this.router.navigate(['/search', {q: searchedQuery }])
     }
 
-    //this.http.post(endpoint,{{}})
+
   }
   searchQueryChange(){
     this.searchLocation = 'California'
