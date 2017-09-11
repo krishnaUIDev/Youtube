@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Http } from '@angular/http';
 
 import { VideoService} from "../videos/videos.service";
+import {VideoItem} from "../videos/video";
 
 @Component({
   selector: 'video-list',
@@ -15,12 +16,12 @@ export class VideoListComponent implements OnInit, OnDestroy {
   someItem = "<h1>Song </h1>";
   todayDate;
   //videoList = ["item1","item1","item1",]  JSON
-  videoList :[any];
+  videoList :[VideoItem];
 
   constructor(private http:Http, private _video:VideoService) { }
 
   ngOnInit() {
-    this.todayDate = new Date()
+   // this.todayDate = new Date()
     this.req = this._video.list().subscribe(data =>{
       //console.log(data)
       this.videoList = data as [any];
@@ -30,9 +31,7 @@ export class VideoListComponent implements OnInit, OnDestroy {
     this.req.unsubscribe()
   }
 
-  getEmbedUrl(x){
-    return 'https://www.youtube.com/embed/' + x.embed
-  }
+
 
 }
 

@@ -20,19 +20,23 @@
     "slug":"Item-3",
     "ID":"3",
     "embed": "YezHNoi-C-c",
-    "image":"assets/images/natrue/3.jpg"
+    "image":"assets/images/natrue/3.jpg",
+    "featured":true
   },
   {
     "name":" Rooba Rooba",
     "slug":"Item-4",
     "ID":"4",
-    "embed": "DRd47VKrJwY"
-
+    "embed": "DRd47VKrJwY",
+    "image":"assets/images/natrue/4.jpg",
+    "featured":true
   },
+
   {
     "name":"item3",
     "slug":"Item-3",
     "ID":"3",
+    "image":"assets/images/natrue/3.jpg",
     "embed": null
   }
 

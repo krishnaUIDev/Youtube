@@ -1,21 +1,18 @@
 
 <carousel *ngIf="homeImageList">
   <slide *ngFor="let imageObj of homeImageList">
-    <a class="" href="/videos/video-1" (click)="preventNormal($event,imageObj)">
+    <a class="" routerLink="/videos/{{ imageObj.slug }}" routerLinkActive="active">
     <img class="img-main-carousel" [src]="imageObj.image" alt="First slide">
   </a>
 
     <div class="carousel-caption">
       <h3>{{ imageObj.name }}</h3>
 
-      <p><a class="btn btn-default" href='/videos/{{ imageObj.slug }}'>View</a> </p>
+      <p><a class="btn btn-default" routerLink='/videos/{{ imageObj.slug }}' routerLinkActive="active">View</a> </p>
     </div>
 
-
-
-
   </slide>
-  <slide>
+<!--  <slide>
     <a class="" #imageTwo href="/videos/video-2" (click)="preventNormal($event,imageTwo)">
     <img class="img-main-carousel" src="../../assets/images/natrue/2.jpg" alt="Second slide">
     </a>
@@ -34,6 +31,6 @@
       <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
       <p><a class="btn btn-default" href="/videos/video-3">Video 3</a> </p>
     </div>
-  </slide>
+  </slide>-->
 </carousel>
 

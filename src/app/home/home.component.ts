@@ -1,31 +1,32 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Http } from '@angular/http';
+
+import { VideoService} from "../videos/videos.service";
+import {VideoItem} from "../videos/video";
+
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  providers : [VideoService]
 })
 export class HomeComponent implements OnInit, OnDestroy {
- // prevented = false;
-  private req:any;
-  homeImageList = [
-    /*{image: "assets/images/natrue/1.jpg",name: "Image 1",slug: "video-1"},
-    {image: "assets/images/natrue/2.jpg",name: "Image 1",slug: "video-2"},
-    {image: "assets/images/natrue/3.jpg",name: "Image 1",slug: "video-3"}*/
 
-  ]
-  constructor(private http: Http, private router:Router) { }
+  private req:any;
+  homeImageList : [VideoItem] = [] as [VideoItem]
+  constructor(private http: Http, private router:Router, private _video:VideoService) { }
 
   ngOnInit() {
-    this.req = this.http.get('assets/JSON/videos.json').subscribe(data=>{
-     // console.log(data.json())
-      data.json().filter(item =>{
+    this.req = this._video.list().subscribe(data=>{
+
+      data.filter(item =>{
         if(item.featured){
           this.homeImageList.push(item)
         }
       })
-      //this.homeImageList = data.json();
+
     })
   }
   ngOnDestroy(){
@@ -34,13 +35,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   preventNormal(event:MouseEvent, image:any){
     if(!image.prevented){
       event.preventDefault()
-      //console.log(image.getAttribute("href"))
-     // image.setAttribute("href","/videos")
-      //image.link = "/videos"
-     // image.prevented = true;
       this.router.navigate(['./videos'])
 
     }
-    //console.log(event)
+
   }
 }
