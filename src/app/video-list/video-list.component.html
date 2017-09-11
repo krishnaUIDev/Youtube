@@ -1,10 +1,10 @@
-<div class="row">
-  <div class="col-sm-12">
-<h1>
-  {{ title }} <!--{{ todayDate | date: "MM/dd/yy"}}-->  <!--used pipe-->
-</h1>
-</div>
-</div>
+  <div class="row">
+    <div class="col-sm-12">
+        <h1>
+            {{ title }} <!--{{ todayDate | date: "MM/dd/yy"}}-->  <!--used pipe-->
+        </h1>
+    </div>
+  </div>
   <div *ngFor = 'let x of videoList;  let i=index' [ngClass]="{'row': (i+1)%3 == 0}">
     <div class='col-md-4' col-sm-12 >
       <div class="thumbnail">

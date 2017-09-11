@@ -13,7 +13,7 @@ export class AppComponent implements OnInit, OnDestroy{
    private routeSub:any;
    constructor (private route:ActivatedRoute){
      this.routeSub = route.params.subscribe(params=>{
-       console.log(params)
+       //console.log(params)
        this.query = params['q']
      })
    }

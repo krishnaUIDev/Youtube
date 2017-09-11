@@ -22,7 +22,7 @@ export class VideoService {
                         return item
                       }
                     })
-        console.log(data)
+       // console.log(data)
         if(data.length == 1){
             return data[0]
         }
