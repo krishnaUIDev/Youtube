@@ -37,4 +37,4 @@ To Deploye this project use `ng build --prod`
 
 ## Developer
 
-[Krishna] (https://github.com/krishnaUIDev)
+[Krishna](https://github.com/krishnaUIDev)
