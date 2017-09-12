@@ -1,4 +1,4 @@
-![Try Angular v4 Logo](https://cdn-images-1.medium.com/max/796/1*juPyda3wq9uz_SNFRLuANg@2x.png)
+![Try Angular v4 Logo](https://www.valuecoders.com/blog/wp-content/uploads/2017/03/angular-4-release.jpg)
 
 # Srvup
 
