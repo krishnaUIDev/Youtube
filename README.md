@@ -38,3 +38,7 @@ To Deploye this project use `ng build --prod`
 ## Developer
 
 [Krishna](https://github.com/krishnaUIDev)
+
+## ScreenShorts
+
+[Click here](https://github.com/krishnaUIDev/Youtube/tree/master/src/Screenshorts)
