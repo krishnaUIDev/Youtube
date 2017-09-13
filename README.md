@@ -1,6 +1,18 @@
+![Latest Version](https://img.shields.io/github/release/justinwalsh/daux.io.svg?style=flat-square)
+![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)
+![Build Status](https://img.shields.io/travis/onigoetz/daux.io/master.svg?style=flat-square)
+![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/onigoetz/daux.io.svg?style=flat-square)
+![Quality Score](https://img.shields.io/scrutinizer/g/onigoetz/daux.io.svg?style=flat-square)
+
+
+
+![Try Angular v4 Logo](https://www.valuecoders.com/blog/wp-content/uploads/2017/03/angular-4-release.jpg)
+
 # Srvup
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.0.
+
+Install `npm install` then Run `ng serve`
 
 ## Development server
 
@@ -26,3 +38,15 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Deployement 
+
+To Deploye this project use `ng build --prod` 
+
+## Developer
+
+[Krishna](https://github.com/krishnaUIDev)
+
+## ScreenShorts
+
+[Click here](https://github.com/krishnaUIDev/Youtube/tree/master/src/Screenshorts)
