@@ -3,15 +3,11 @@
   <slide *ngFor="let imageObj of homeImageList">
     <a class="" routerLink="/videos/{{ imageObj.slug }}" routerLinkActive="active">
     <img class="img-main-carousel" [src]="imageObj.image" alt="First slide">
-  </a>
-
+    </a>
     <div class="carousel-caption">
       <h3>{{ imageObj.name }}</h3>
-
       <p><a class="btn btn-default" routerLink='/videos/{{ imageObj.slug }}' routerLinkActive="active">View</a> </p>
     </div>
-
   </slide>
-
 </carousel>
 
