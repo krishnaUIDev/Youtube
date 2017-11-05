@@ -1,7 +1,7 @@
 export class VideoItem {
   slug: string;
-  name:string;
+  name: string;
   embed?: string;
-  image?:string;
+  image?: string;
   featured?: Boolean;
 }

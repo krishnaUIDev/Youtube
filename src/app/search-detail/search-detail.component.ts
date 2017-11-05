@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
-import { VideoService} from "../videos/videos.service";
-import {VideoItem} from "../videos/video";
+import { ActivatedRoute } from '@angular/router';
+import { VideoService} from '../videos/videos.service';
+import {VideoItem} from '../videos/video';
 @Component({
   selector: 'app-search-detail',
   templateUrl: './search-detail.component.html',
@@ -9,29 +9,29 @@ import {VideoItem} from "../videos/video";
   providers: [VideoService]
 })
 export class SearchDetailComponent implements OnInit, OnDestroy {
-  private routeSub:any;
-  private req:any;
-  query:string;
+  private routeSub: any;
+  private req: any;
+  query: string;
   videoList: [VideoItem];
 
 
 
-  constructor(private route: ActivatedRoute, private _video:VideoService) { }
+  constructor(private route: ActivatedRoute, private _video: VideoService) { }
 
   ngOnInit() {
-   this.routeSub = this.route.params.subscribe(params=>{
+   this.routeSub = this.route.params.subscribe(params => {
 
      this.query = params['q']
-     this.req = this._video.search(this.query).subscribe(data=>{
+     this.req = this._video.search(this.query).subscribe(data => {
        this.videoList = data as [VideoItem];
      })
    })
   }
-  ngOnDestroy(){
+  ngOnDestroy() {
      this.routeSub.unsubscribe()
     this.req.unsubscribe()
   }
-  getEmbedUrl(x){
+  getEmbedUrl(x) {
     return 'https://www.youtube.com/embed/' + x.embed
   }
 }

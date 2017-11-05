@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
-//third party imports
+// third party imports
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -28,7 +28,7 @@ import { VideoDetailsComponent } from './video-details/video-details.component';
     SearchDetailComponent
   ],
   imports: [
-    //ng bootstrap
+    // ng bootstrap
     BsDropdownModule.forRoot(),
     CarouselModule.forRoot(),
     FormsModule,

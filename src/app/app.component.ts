@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,17 +10,17 @@ import { ActivatedRoute } from "@angular/router";
 export class AppComponent implements OnInit, OnDestroy{
    title = 'YouTube';
    query: string;
-   private routeSub:any;
-   constructor (private route:ActivatedRoute){
-     this.routeSub = route.params.subscribe(params=>{
-       //console.log(params)
+   private routeSub: any;
+   constructor (private route: ActivatedRoute) {
+     this.routeSub = route.params.subscribe(params => {
+       // console.log(params)
        this.query = params['q']
      })
    }
   ngOnInit() {
 
   }
-  ngOnDestroy(){
+  ngOnDestroy() {
      this.routeSub.unsubscribe()
   }
 }
