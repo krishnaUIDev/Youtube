@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Http } from "@angular/http";
+import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-const endpoint = 'assets/JSON/videos.json'   //your domain.com/api
+const endpoint = 'assets/JSON/videos.json';  // your domain.com/api
 @Injectable()
 export class VideoService {
 
@@ -11,31 +11,31 @@ export class VideoService {
 
   list(){
     return this.http.get(endpoint)
-        .map(response=>response.json())
+        .map(response => response.json())
         .catch(this.handleError)
   }
-  get(slug){
+  get(slug) {
     return this.http.get(endpoint)
-      .map(response=>{
-          let data = response.json().filter(item=>{
-                      if(item.slug == slug){
+      .map(response => {
+          let data = response.json().filter(item => {
+                      if(item.slug == slug) {
                         return item
                       }
                     })
        // console.log(data)
-        if(data.length == 1){
+        if (data.length == 1) {
             return data[0]
         }
         return {}
       })
       .catch(this.handleError)
   }
-  search(query){
+  search(query) {
     return this.http.get(endpoint)
-      .map(response=>{
-        let data = []
-        let req = response.json().filter(item=>{
-          if(item.slug.indexOf(query) >=0){
+      .map(response => {
+        let data = [];
+        let req = response.json().filter(item => {
+          if(item.slug.indexOf(query) >=0 ) {
              data.push(item)
           }
         })
@@ -44,7 +44,7 @@ export class VideoService {
       .catch(this.handleError)
   }
 
-  private handleError(error:any, caught:any): any{
+  private handleError(error: any, caught: any): any {
     console.log(error, caught)
   }
 }

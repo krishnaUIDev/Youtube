@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute } from '@angular/router';
 
-import { VideoService } from "../videos/videos.service";
-import {VideoItem} from "../videos/video";
+import { VideoService } from '../videos/videos.service';
+import {VideoItem} from '../videos/video';
 
 @Component({
   selector: 'video-details',
@@ -11,10 +11,10 @@ import {VideoItem} from "../videos/video";
   providers: [VideoService]
 })
 export class VideoDetailsComponent implements OnInit, OnDestroy {
-   private routeSub:any;
-   private req:any;
-   slug:string;
-   video:VideoItem;
+   private routeSub: any;
+   private req: any;
+   slug: string;
+   video: VideoItem;
   constructor(private route: ActivatedRoute, private _video: VideoService) { }
 
   ngOnInit() {
@@ -26,11 +26,11 @@ export class VideoDetailsComponent implements OnInit, OnDestroy {
     })
 
   }
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.routeSub.unsubscribe()
     this.req.unsubscribe()
   }
-  getEmbedUrl(x){
+  getEmbedUrl(x) {
     return 'https://www.youtube.com/embed/' + x.embed
   }
 }
