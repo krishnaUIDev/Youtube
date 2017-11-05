@@ -15,7 +15,7 @@ export class VideoListComponent implements OnInit, OnDestroy {
   title = "Orange Songs";
   someItem = "<h1>Song </h1>";
   todayDate;
-  //videoList = ["item1","item1","item1",]  JSON
+  // videoList = ["item1","item1","item1",]  JSON
   videoList :[VideoItem];
 
   constructor(private http:Http, private _video:VideoService) { }
